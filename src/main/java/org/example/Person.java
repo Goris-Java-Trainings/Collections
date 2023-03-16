@@ -1,6 +1,6 @@
 package org.example;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private Integer age;
     private String name;
 
@@ -31,5 +31,10 @@ public class Person {
                 "age=" + age +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return this.age - o.age;
     }
 }
